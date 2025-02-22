@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Juego de prueba</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+     <header>
+       <h1>Juego de conocimiento</h1>
+       <p>Preguntas</p>
+     </header>
+
+   <div class="content">
+        <section id="p0">
+            <h3>1 - ¿Quién escribió "Cien años de soledad"?</h3>
+            <label>
+                <input type="radio" value="0" name="p0" onclick="respuesta (0,this)"> Julio Cortázar
+            </label>
+            <label>
+                <input type="radio" value="1" name="p0" onclick="respuesta (0,this)"> Gabriel García Márquez
+            </label>
+            <label>
+                <input type="radio" value="2" name="p0" onclick="respuesta (0,this)"> Mario Vargas Llosa
+            </label>
+            <label>
+                <input type="radio" value="3" name="p0" onclick="respuesta (0,this)"> Jorge Luis Borges
+            </label>
+        </section>
+        <section id="p1">
+            <h3>2 - ¿Cuál es el océano más grande del mundo?</h3>
+            <img src="océano.jpg" class="centered" alt="Océano">
+            <label>
+                <input type="radio" value="0" name="p1" onclick="respuesta (1,this)"> Atlántico
+            </label>
+            <label>
+                <input type="radio" value="1" name="p1" onclick="respuesta (1,this)"> Índico
+            </label>
+            <label>
+                <input type="radio" value="2" name="p1" onclick="respuesta (1,this)"> Pacífico
+            </label>
+            <label>
+                <input type="radio" value="3" name="p1" onclick="respuesta (1,this)"> Ártico
+            </label>
+        </section>
+        <section id="p2">
+            <h3>3 - ¿En qué año llegó el hombre a la Luna?</h3>
+            <img src="Hombre_luna.jpg" class="centered" alt="Hombre en la luna">
+            <label>
+                <input type="radio" value="0" name="p2" onclick="respuesta (2,this)"> 1965
+            </label>
+            <label>
+                <input type="radio" value="1" name="p2" onclick="respuesta (2,this)"> 1969
+            </label>
+            <label>
+                <input type="radio" value="p2" name="p2" onclick="respuesta (2,this)"> 1972
+            </label>
+            <label>
+                <input type="radio" value="3" name="p2" onclick="respuesta (2,this)"> 1975
+            </label>
+        </section>
+        <section id="p3">
+            <h3>4 - ¿Cuál es la capital de Francia?</h3>
+            <img src="Paris.jpg" class="centered" alt="Capital de Francia">
+            <label>
+                <input type="radio" value="0" name="p3" onclick="respuesta (3,this)"> Berlín
+            </label>
+            <label>
+                <input type="radio" value="1" name="p3" onclick="respuesta (3,this)"> Madrid
+            </label>
+            <label>
+                <input type="radio" value="2" name="p3" onclick="respuesta (3,this)"> París
+            </label>
+            <label>
+                <input type="radio" value="3" name="p3" onclick="respuesta(3,this)"> Roma
+            </label>
+        </section>
+        <section id="p4">
+            <h3>5 - ¿Qué famoso artista pintó "La noche estrellada"?</h3>
+            <img src="Proyecto_pintura.jpg" class="centered" alt="La noche estrellada">
+            <label>
+                <input type="radio" value="0" name="p4" onclick="respuesta (4,this)"> Pablo Picasso
+            </label>
+            <label>
+                <input type="radio" value="1" name="p4" onclick="respuesta (4,this)"> Vincent van Gogh
+            </label>
+            <label>
+                <input type="radio" value="2" name="p4" onclick="respuesta (4,this)"> Claude Monet
+            </label>
+            <label>
+                <input type="radio" value="3" name="p4" onclick="respuesta (4,this)"> Salvador Dalí
+            </label>
+        </section>
+        
+        <button onclick="resultados()">Resultados</button>
+        <h2>cantidad de respuesta correctas: <span id="resultados"></span></h2>
+        <button onclick="reiniciar()">Reiniciar</button>
+   </div>
+
+   <script src="script.js"></script>
+</body>
+
+</html>
