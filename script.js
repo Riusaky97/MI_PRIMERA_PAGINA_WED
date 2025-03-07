@@ -16,7 +16,8 @@ function respuesta(num_pregunta, seleccionada){
     let labels = document.getElementById(id).children;
     
     // restablecer color de fondo
-    for (let i =0; i < labels.length; i++){labels[i].style.backgroundColor = "white";
+    for (let i =0; i < labels.length; i++){
+        labels[i].classList.remove("correct", "incorrect");
     }
 
     //doy el color a la etiqueta seleccionada
@@ -24,11 +25,32 @@ function respuesta(num_pregunta, seleccionada){
 }
 
 //funcion que compara los arreglos para saber cuantas estuvieron correctas 
+//añadi el cambio de color de la opcion seleccionada a verde si es correcta y a rojo si es incorrecta
 function resultados(){
     cantidad_correctas = 0;
     for(let i=0; i < correctas.length;i++){
-        if(correctas[i]==opcion_elegida[i]){
-            cantidad_correctas++;
+        let id="p" + i;
+        let labels = document.getElementById(id).children;
+
+        for (let j = 0; j <labels.length; j++){
+            labels[j].style.backgroundColor="white";
+        }
+        //obtenemos la respuesta elegida para la pregunta i
+        let respuestaElegida = opcion_elegida[i];
+        //buscamos en cada etiqueta para encontrar aquellas con la respuesta elegida
+        for (let j = 0; j<labels.length; j++){
+            let radio = labels[j].querySelector('input[type="radio"]');
+            if (radio && radio.value == respuestaElegida){
+                //comparamos la respuesta seleccionada
+                if (parseInt(radio.value) === correctas[i]) {
+                    // si es correcta la marcamos de verde 
+                    labels[j].classList.add("correct");
+                    cantidad_correctas++;
+                } else {
+                    //si es incorrecta la marcamos de rojo
+                    labels[j].classList.add("incorrect");             
+                }
+            }
         }
     }
 
@@ -46,11 +68,12 @@ function reiniciar() {
         let id ="p" + i;
         let labels = document.getElementById(id).children;
         for(let j= 0; j< labels.length; j++){
-            labels[j].style.backgroundColor="white";
+            labels[j].classList.remove("correct", "incorrect");
             //desmarcar el boton de radio
-            if(labels[j].querySelector('input[type="radio"]')){
-                labels[j].querySelector('input[type="radio"]').checked= false;
-                }
+           let radio = labels[j].querySelector('input[type="radio"]');
+           if (radio) {
+            radio.checked = false;
+           }
         }
     }
     //limpiar el resultados mostrado
