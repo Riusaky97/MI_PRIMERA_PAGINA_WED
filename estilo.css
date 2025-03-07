@@ -7,7 +7,6 @@ header{
   background: linear-gradient(135deg, #000, #333);
   color: #fff;
   padding: 10px 0;
-
 }
 .container{
   max-width: 700px;
@@ -62,4 +61,20 @@ h2{
 #resultados{
   font-size: 30px;
   color: darkred;
+}
+.incorrect{
+  background-color: #9e0000;
+  color: #721c24;
+  border: 2px solid #e80707;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 4px;
+}
+.correct{
+  background-color: #16620d;
+  color: #155724;
+  border: 2px solid #13a801;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 4px;
 }
